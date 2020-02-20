@@ -20,6 +20,7 @@
 
 import React, {useCallback} from 'react';
 import styled from 'styled-components';
+import classnames from 'classnames';
 import {
   ArrowRight
 } from 'components/common/icons';
@@ -92,7 +93,7 @@ const renderChildren = (child, index) => React.cloneElement(child, {
       }
     }
   },
-  className: 'action-panel-item'
+  className: classnames('action-panel-item', child.props.className)
 });
 
 export const ActionPanelItem = React.memo(({

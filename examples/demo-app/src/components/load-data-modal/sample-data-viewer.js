@@ -114,8 +114,8 @@ const StyledError = styled.div`
   margin-bottom: 16px;
 `;
 
-const SampleMap = ({sample, onClick}) => (
-  <StyledSampleMap className="sample-map-gallery__item">
+const SampleMap = ({id, sample, onClick}) => (
+  <StyledSampleMap id={id} className="sample-map-gallery__item">
     <div className="sample-map">
       <div className="sample-map__image" onClick={onClick}>
         {sample.imageUrl && <img src={sample.imageUrl} />}
@@ -143,6 +143,7 @@ const SampleMapGallery = ({sampleData, sampleMaps, onLoadSample, back, error}) =
     <StyledSampleGallery className="sample-map-gallery">
       {sampleMaps.filter(sp => sp.visible).map(sp => (
         <SampleMap
+          id={sp.id}
           sample={sp}
           key={sp.id}
           onClick={() => onLoadSample(sp)}

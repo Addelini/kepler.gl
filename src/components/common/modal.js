@@ -129,10 +129,10 @@ export const ModalFooter = ({
   return (
     <StyledModalFooter className="modal--footer">
       <FooterActionWrapper>
-        <Button {...cancelButtonProps} onClick={cancel}>
+        <Button className="modal--footer--cancel-button" {...cancelButtonProps} onClick={cancel}>
           {cancelButtonProps.children}
         </Button>
-        <Button {...confirmButtonProps} onClick={confirm}>
+        <Button className="modal--footer--confirm-button" {...confirmButtonProps} onClick={confirm}>
           {confirmButtonProps.children}
         </Button>
       </FooterActionWrapper>
